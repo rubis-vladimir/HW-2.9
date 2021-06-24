@@ -10,7 +10,7 @@ import Spring
 
 class AnimationViewController: UIViewController {
     
-    var animation: Animation = Animation(animation: .Shake, animationCurve: .EaseIn, smile: "👋")
+    var animation = Animation(animation: .fadeIn, animationCurve: .easeIn, smile: "👋")
     var counter = 10
     var insectImageViews: [UIImageView] = []
     
@@ -55,6 +55,7 @@ class AnimationViewController: UIViewController {
     // MARK: - Create animation
     
     func setOptions() {
+
         reduceCounter()
         animationLabel.text = animation.info
         
@@ -88,8 +89,8 @@ class AnimationViewController: UIViewController {
             counterLabel.isHidden = true
             button.isHidden = true
             
-            explosionImageView.animation = Spring.AnimationPreset.FadeIn.rawValue
-            explosionImageView.curve = Spring.AnimationCurve.EaseIn.rawValue
+            explosionImageView.animation = Spring.AnimationPreset.fadeIn.rawValue
+            explosionImageView.curve = Spring.AnimationCurve.easeIn.rawValue
             explosionImageView.duration = 1.5
             explosionImageView.isHidden = false
             explosionImageView.animate()
